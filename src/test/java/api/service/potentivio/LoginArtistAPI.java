@@ -5,16 +5,16 @@ import org.json.JSONObject;
 
 public class LoginArtistAPI {
 
-    private static final String REQRESIN_BASEURL = "https://reqres.in";
+    private static final String POTENTIVIO_BASEURL = "https://potentivio.my.id";
 
     public void postLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "eve.holt@reqres.in");
-        bodyJSON.put("password", "cityslicka");
+        bodyJSON.put("email", "satria@gmail.com");
+        bodyJSON.put("password", "satria123");
 
         SerenityRest.given()
                 .header("Content-type", "application/json")
                 .body(bodyJSON.toString())
-                .post(REQRESIN_BASEURL + "/api/login");
+                .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 }

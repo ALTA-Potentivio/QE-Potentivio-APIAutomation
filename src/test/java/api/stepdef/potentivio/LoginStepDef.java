@@ -12,7 +12,6 @@ public class LoginStepDef {
     LoginArtistAPI loginArtistAPI = new LoginArtistAPI();
 
     //action
-
     @And("user send POST login artist request to potentivio")
     public void postloginArtist() {
         loginArtistAPI.postLoginArtist();

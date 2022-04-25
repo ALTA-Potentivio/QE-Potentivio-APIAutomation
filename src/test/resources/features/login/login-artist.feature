@@ -1,7 +1,7 @@
 Feature: Login Artist
 
-  @positive
-  Scenario: Success POST login artist
+  @negative
+  Scenario: Unsuccessful POST login artist
     When user send POST login artist request to potentivio
-    Then response status code should be 200
-    And response structure should match json schema "login-artist.json"
+    Then response status code should be 400
+    And response structure should match json schema "failed-login-artist.json"
