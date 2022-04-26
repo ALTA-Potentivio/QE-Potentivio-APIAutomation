@@ -1,22 +1,11 @@
-package api.stepdef.potentivio;
+package api.stepdef;
 
-import api.service.potentivio.LoginArtistAPI;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
-public class LoginStepDef {
-
-    LoginArtistAPI loginArtistAPI = new LoginArtistAPI();
-
-    //action
-    @And("user send POST login artist request to potentivio")
-    public void postloginArtist() {
-        loginArtistAPI.postLoginArtist();
-    }
-
+public class ValidationStepDef {
     //validation
     @Then("response status code should be {int}")
     public void statusCodeValidation(int statusCode) {

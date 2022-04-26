@@ -1,4 +1,4 @@
-package api.stepdef.potentivio;
+package api.stepdef;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
