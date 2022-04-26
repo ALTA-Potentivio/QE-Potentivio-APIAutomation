@@ -18,6 +18,11 @@ public class LoginStepDef {
         loginAPI.postLoginArtist();
     }
 
+    @And("user send POST failed login artist request to potentivio")
+    public void failedPostloginArtist() {
+        loginAPI.failedPostLoginArtist();
+    }
+
     @And("user send POST login cafe owner request to potentivio")
     public void postloginCafeOwner() {
         loginAPI.postLoginCafeOwner();

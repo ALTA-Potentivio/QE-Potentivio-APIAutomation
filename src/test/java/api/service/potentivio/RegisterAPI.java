@@ -9,7 +9,20 @@ public class RegisterAPI {
     public static void postRegisterArtist() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("artist_name", "satria the star");
-        bodyJSON.put("email", "satriaaaa4@gmail.com");
+        bodyJSON.put("email", "satriaaaa445@gmail.com");
+        bodyJSON.put("password", "satria123");
+        bodyJSON.put("address", "jl. panglima no.11 - jakarta timur");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/artist");
+    }
+
+    public static void failedPostRegisterArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("artist_name", "satria the star");
+        bodyJSON.put("email", "satriaaaa44@gmail.com");
         bodyJSON.put("password", "satria123");
         bodyJSON.put("address", "jl. panglima no.11 - jakarta timur");
 

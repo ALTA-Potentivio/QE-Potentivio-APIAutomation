@@ -9,8 +9,19 @@ public class LoginAPI {
 
     public void postLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "satrias@gmail.com");
+        bodyJSON.put("email", "satria@gmail.com");
         bodyJSON.put("password", "satria123");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void failedPostLoginArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "satriaaas@gmail.com");
+        bodyJSON.put("password", "satria1234");
 
         SerenityRest.given()
                 .header("Content-type", "application/json")

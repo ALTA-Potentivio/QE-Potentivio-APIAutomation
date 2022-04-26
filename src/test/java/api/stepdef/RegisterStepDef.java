@@ -12,6 +12,11 @@ public class RegisterStepDef {
         registerAPI.postRegisterArtist();
     }
 
+    @And("user send POST failed Register artist request to potentivio")
+    public void failedPostRegisterArtist() {
+        registerAPI.failedPostRegisterArtist();
+    }
+
     @And("user send POST Register cafe owner request to potentivio")
     public void postregisterCafeOwner() {
         registerAPI.postRegisterCafeOwner();
