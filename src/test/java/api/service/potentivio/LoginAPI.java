@@ -9,8 +9,8 @@ public class LoginAPI {
 
     public void postLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "satria@gmail.com");
-        bodyJSON.put("password", "satria123");
+        bodyJSON.put("email", "testing@gmail.com");
+        bodyJSON.put("password", "testing");
 
         SerenityRest.given()
                 .header("Content-type", "application/json")
@@ -20,7 +20,7 @@ public class LoginAPI {
 
     public void failedPostLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "satriaaas@gmail.com");
+        bodyJSON.put("email", "testinggg@gmail.com");
         bodyJSON.put("password", "satria1234");
 
         SerenityRest.given()
