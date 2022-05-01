@@ -1,31 +1,27 @@
 package api.stepdef;
 
-import api.service.potentivio.LoginAPI;
-import api.service.potentivio.RegisterAPI;
+import api.service.PotentivioAPI;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class LoginStepDef {
 
-    LoginAPI loginAPI = new LoginAPI();
+    PotentivioAPI potentivioAPI = new PotentivioAPI();
 
-    @And("user send POST login artist request to potentivio")
+
+    @When("user send POST login artist request to potentivio")
     public void postloginArtist() {
-        loginAPI.postLoginArtist();
+        potentivioAPI.postLoginArtist();
     }
 
     @And("user send POST failed login artist request to potentivio")
     public void failedPostloginArtist() {
-        loginAPI.failedPostLoginArtist();
+        potentivioAPI.failedPostLoginArtist();
     }
 
     @And("user send POST login cafe owner request to potentivio")
     public void postloginCafeOwner() {
-        loginAPI.postLoginCafeOwner();
+        potentivioAPI.postLoginCafeOwner();
     }
-
 }

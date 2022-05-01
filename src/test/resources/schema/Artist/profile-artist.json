@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "account_number": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "artist_name": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "id_catagory": {
+          "type": "integer"
+        },
+        "id_genre": {
+          "type": "integer"
+        },
+        "name_catagory": {
+          "type": "string"
+        },
+        "name_genre": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "price": {
+          "type": "integer"
+        },
+        "rating": {
+          "type": "integer"
+        },
+        "total_rate": {
+          "type": "integer"
+        },
+        "video_artist": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "video_url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "video_url"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "video_url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "video_url"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "video_url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "video_url"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "video_url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "video_url"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "account_number",
+        "address",
+        "artist_name",
+        "avatar",
+        "description",
+        "email",
+        "id",
+        "id_catagory",
+        "id_genre",
+        "name_catagory",
+        "name_genre",
+        "phone_number",
+        "price",
+        "rating",
+        "total_rate",
+        "video_artist"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}
