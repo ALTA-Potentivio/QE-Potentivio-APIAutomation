@@ -1,24 +1,24 @@
 package api.stepdef;
 
-import api.service.potentivio.RegisterAPI;
+import api.service.PotentivioAPI;
 import io.cucumber.java.en.And;
 
 public class RegisterStepDef {
 
-    RegisterAPI registerAPI = new RegisterAPI();
+    PotentivioAPI potentivioAPI = new PotentivioAPI();
 
     @And("user send POST Register artist request to potentivio")
     public void postregisterArtist() {
-        registerAPI.postRegisterArtist();
+        potentivioAPI.postRegisterArtist();
     }
 
     @And("user send POST failed Register artist request to potentivio")
     public void failedPostRegisterArtist() {
-        registerAPI.failedPostRegisterArtist();
+        potentivioAPI.failedPostRegisterArtist();
     }
 
     @And("user send POST Register cafe owner request to potentivio")
     public void postregisterCafeOwner() {
-        registerAPI.postRegisterCafeOwner();
+        potentivioAPI.postRegisterCafeOwner();
     }
 }

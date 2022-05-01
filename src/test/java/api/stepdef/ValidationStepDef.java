@@ -8,13 +8,13 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 public class ValidationStepDef {
     //validation
     @Then("response status code should be {int}")
-    public void statusCodeValidation(int statusCode) {
-        restAssuredThat(response -> response.statusCode(statusCode));
+    public void statusCodeValidation(int responseCode) {
+        restAssuredThat(response -> response.statusCode(responseCode));
     }
 
-    @Then("response structure should match json schema {string}")
-    public void validateJsonSchema(String schema) {
-        String path = String.format("schema/%s", schema);
-        restAssuredThat(response -> response.assertThat().body(matchesJsonSchemaInClasspath(path)));
+    @Then("response structure should match json schema {string} from {string}")
+    public void validateJsonSchema(String schema, String folderSchema) {
+        String schemaPath = String.format("schema/%s/%s", folderSchema, schema);
+        restAssuredThat(response -> response.assertThat().body(matchesJsonSchemaInClasspath(schemaPath)));
     }
 }
