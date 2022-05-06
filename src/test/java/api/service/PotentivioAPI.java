@@ -190,6 +190,7 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 
+
     public void wrongpasswordLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("email", "testing@gmail.com");
@@ -249,6 +250,7 @@ public class PotentivioAPI {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("email", "abc@gmail.com");
         bodyJSON.put("password", "abcdef");
+
 
         SerenityRest.given()
                 .header("Content-type", "application/json")
@@ -335,6 +337,7 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 
+
     public void getAllArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
@@ -410,6 +413,7 @@ public class PotentivioAPI {
         System.out.println(token);
     }
 
+
         public void deleteArtist(String token) {
             if (token.equalsIgnoreCase("null")) {
                 SerenityRest.given()
@@ -423,5 +427,3 @@ public class PotentivioAPI {
         }
 
         }
-
-

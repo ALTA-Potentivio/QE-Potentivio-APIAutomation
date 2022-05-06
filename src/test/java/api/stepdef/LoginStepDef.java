@@ -2,12 +2,8 @@ package api.stepdef;
 
 import api.service.PotentivioAPI;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class LoginStepDef {
 
@@ -17,12 +13,7 @@ public class LoginStepDef {
     @When("user send POST login artist request to potentivio")
     public void postloginArtist() {
         potentivioAPI.postLoginArtist();
-    }
 
-//    @And("user send POST failed login artist request to potentivio")
-//    public void failedPostloginArtist() {
-//        potentivioAPI.failedPostLoginArtist();
-//    }
 
     @And("user send POST wrong password login artist request to potentivio")
     public void wrongpasswordLoginArtist() {
@@ -87,4 +78,3 @@ public class LoginStepDef {
     }
 
     }
-
