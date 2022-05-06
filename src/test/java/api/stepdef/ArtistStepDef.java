@@ -6,7 +6,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
 public class ArtistStepDef {
+
     PotentivioAPI potentivioAPI = new PotentivioAPI();
+    String URL;
 
 
     @Given("user has already had login token as artist")
