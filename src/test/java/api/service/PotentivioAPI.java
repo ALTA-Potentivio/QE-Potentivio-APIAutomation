@@ -190,10 +190,65 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 
-    public void failedPostLoginArtist() {
+    public void wrongpasswordLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "testinggg@gmail.com");
-        bodyJSON.put("password", "satria1234");
+        bodyJSON.put("email", "testing@gmail.com");
+        bodyJSON.put("password", "testing123");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void emptypasswordLoginArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "satria@gmail.com");
+        bodyJSON.put("password", "");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void emptyemailLoginArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "");
+        bodyJSON.put("password", "satria123");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void wrongemailLoginArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "satriaabc@gmail.com");
+        bodyJSON.put("password", "satria123");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void emptyemailpassArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "");
+        bodyJSON.put("password", "");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void unregisteredArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "abc@gmail.com");
+        bodyJSON.put("password", "abcdef");
 
         SerenityRest.given()
                 .header("Content-type", "application/json")
@@ -211,6 +266,73 @@ public class PotentivioAPI {
                 .header("Content-type", "application/json")
                 .body(bodyJSON.toString())
                 .post(POTENTIVIO_BASEURL + "/login/cafe-owner");
+    }
+
+    public void wrongpasswordloginCafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+
+        bodyJSON.put("email", "cafesemestasss@gmail.com");
+        bodyJSON.put("password", "password12345");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/cafe-owner");
+    }
+
+    public void wrongemailloginCafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+
+        bodyJSON.put("email", "cafesemesta123@gmail.com");
+        bodyJSON.put("password", "password123");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/cafe-owner");
+    }
+
+    public void emptypasswordLoginACafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "cafesemesta123@gmail.com");
+        bodyJSON.put("password", "");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void emptyemailLoginCafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "");
+        bodyJSON.put("password", "password123");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+    public void emptyemailpassCafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "");
+        bodyJSON.put("password", "");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+    }
+
+    public void unregisteredCafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("email", "cafe@gmail.com");
+        bodyJSON.put("password", "abcdef");
+
+        SerenityRest.given()
+                .header("Content-type", "application/json")
+                .body(bodyJSON.toString())
+                .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 
     public void getAllArtist(String token) {
