@@ -313,6 +313,7 @@ public class PotentivioAPI {
                 .body(bodyJSON.toString())
                 .post(POTENTIVIO_BASEURL + "/login/artist");
     }
+
     public void emptyemailpassCafeOwner() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("email", "");
@@ -410,18 +411,44 @@ public class PotentivioAPI {
         System.out.println(token);
     }
 
-        public void deleteArtist(String token) {
-            if (token.equalsIgnoreCase("null")) {
-                SerenityRest.given()
-                        .get(POTENTIVIO_BASEURL + "/artist/19");
-            } else {
-                SerenityRest.given()
-                        .header("Authorization", "Bearer " + token)
-                        .get(POTENTIVIO_BASEURL + "/artist/19");
-            }
-            System.out.println(token);
+    public void deleteArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/artist/19");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/artist/19");
         }
+        System.out.println(token);
+    }
 
+    public void postVideoArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/video/artist");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("video_url", "youtube.com/usamah123");
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/video/artist");
         }
+        System.out.println(token);
+    }
+
+    public void deleteVideoArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/video/artist/1");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/video/artist/1");
+        }
+        System.out.println(token);
+    }
+
+}
 
 
