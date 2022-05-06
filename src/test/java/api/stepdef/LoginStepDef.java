@@ -13,6 +13,7 @@ public class LoginStepDef {
     @When("user send POST login artist request to potentivio")
     public void postloginArtist() {
         potentivioAPI.postLoginArtist();
+    }
 
 
     @And("user send POST wrong password login artist request to potentivio")
