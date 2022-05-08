@@ -47,10 +47,10 @@ Feature: Artist
       Then response status code should be 200
       And response structure should match json schema "update-artist.json" from "Artist"
 
-  @positive-deleteartist
-  Scenario: Success DELETE Artist
-    Given user has already had login token as artist
-    When user send DELETE Artist request to potentivio
-    Then response status code should be 200
-    And response structure should match json schema "delete-artist.json" from "Artist"
+    @positive-deleteartist
+    Scenario: Success DELETE Artist
+      Given user has already had login token as artist
+      When user send DELETE Artist request to potentivio
+      Then response status code should be 200
+      And response structure should match json schema "delete-artist.json" from "Artist"
 
