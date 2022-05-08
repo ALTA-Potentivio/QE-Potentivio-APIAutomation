@@ -27,7 +27,7 @@
           "type": "integer"
         },
         "id_catagory": {
-          "type": "integer"
+          "type": "null"
         },
         "id_genre": {
           "type": "integer"
@@ -52,68 +52,7 @@
         },
         "video_artist": {
           "type": "array",
-          "items": [
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
-            }
-          ]
+          "items": {}
         }
       },
       "required": [

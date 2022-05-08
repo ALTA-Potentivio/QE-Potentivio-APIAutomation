@@ -26,7 +26,7 @@ public class PotentivioAPI {
         RequestSpecification request = given();
 
         String payload = "{\n" +
-                "    \"email\": \"testing@gmail.com\",\n" +
+                "    \"email\": \"testing2@gmail.com\",\n" +
                 "    \"password\": \"testing\"\n" +
                 "}";
 
@@ -138,10 +138,11 @@ public class PotentivioAPI {
         }
     }
 
+    //Register
     public static void postRegisterArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name", "testing2");
-        bodyJSON.put("email", "testing2@gmail.com");
+        bodyJSON.put("artist_name", "testing");
+        bodyJSON.put("email", "testing3@gmail.com");
         bodyJSON.put("password", "testing");
         bodyJSON.put("address", "jakarta");
 
@@ -178,10 +179,10 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/cafe");
     }
 
-
+    //Login Artist
     public void postLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "testing@gmail.com");
+        bodyJSON.put("email", "testing2@gmail.com");
         bodyJSON.put("password", "testing");
 
         SerenityRest.given()
@@ -193,7 +194,7 @@ public class PotentivioAPI {
 
     public void wrongpasswordLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("email", "testing@gmail.com");
+        bodyJSON.put("email", "testing2@gmail.com");
         bodyJSON.put("password", "testing123");
 
         SerenityRest.given()
@@ -258,6 +259,7 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 
+    //Login Cafe Owner
     public void postLoginCafeOwner() {
         JSONObject bodyJSON = new JSONObject();
 
@@ -338,7 +340,7 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/login/artist");
     }
 
-
+    //Artist
     public void getAllArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
@@ -356,7 +358,6 @@ public class PotentivioAPI {
                 .get(POTENTIVIO_BASEURL + "/artist");
     }
 
-    //
     public void getProfileArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
@@ -395,7 +396,7 @@ public class PotentivioAPI {
     public void putUpdateArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
-                    .get(POTENTIVIO_BASEURL + "/artist/19");
+                    .get(POTENTIVIO_BASEURL + "/artist/30");
         } else {
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
@@ -408,7 +409,7 @@ public class PotentivioAPI {
                     .multiPart("account_number", "01019191818")
                     .multiPart("avatar", new File("/Users/zatihulwani/Downloads/avatar/avatar2.png"))
                     .multiPart("rating", "0")
-                    .put(POTENTIVIO_BASEURL + "/artist/19");
+                    .put(POTENTIVIO_BASEURL + "/artist/30");
         }
 
         System.out.println(token);
@@ -417,25 +418,26 @@ public class PotentivioAPI {
         public void deleteArtist(String token) {
             if (token.equalsIgnoreCase("null")) {
                 SerenityRest.given()
-                        .get(POTENTIVIO_BASEURL + "/artist/19");
+                        .delete(POTENTIVIO_BASEURL + "/artist/30");
             } else {
                 SerenityRest.given()
                         .header("Authorization", "Bearer " + token)
-                        .get(POTENTIVIO_BASEURL + "/artist/19");
+                        .delete(POTENTIVIO_BASEURL + "/artist/30");
             }
             System.out.println(token);
     }
 
+    //Video Artist
     public void postVideoArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
-                    .get(POTENTIVIO_BASEURL + "/video/artist");
+                    .post(POTENTIVIO_BASEURL + "/video/artist");
         } else {
             JSONObject bodyJSON = new JSONObject();
             bodyJSON.put("video_url", "youtube.com/usamah123");
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
-                    .get(POTENTIVIO_BASEURL + "/video/artist");
+                    .post(POTENTIVIO_BASEURL + "/video/artist");
         }
         System.out.println(token);
     }
@@ -443,13 +445,45 @@ public class PotentivioAPI {
     public void deleteVideoArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
-                    .get(POTENTIVIO_BASEURL + "/video/artist/1");
+                    .delete(POTENTIVIO_BASEURL + "/video/artist/1");
         } else {
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
-                    .get(POTENTIVIO_BASEURL + "/video/artist/1");
+                    .delete(POTENTIVIO_BASEURL + "/video/artist/1");
         }
         System.out.println(token);
     }
 
+    //Category Artist
+    public void getAllCategory(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/category");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/category");
+        }
+        System.out.println(token);
+    }
+    public void unsuccessGetAllCategory() {
+        SerenityRest.given()
+                .get(POTENTIVIO_BASEURL + "/category");
+    }
+
+    public void postCategoryArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/category");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("name_catagory", "Duo");
+            SerenityRest.given()
+                    .header("Content-type", "application/json")
+                    .body(bodyJSON.toString())
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/category");
+        }
+        System.out.println(token);
+    }
 }

@@ -29,16 +29,31 @@ public class PotentivioStepDef {
         potentivioAPI.getAllArtist(potentivioAPI.getTokenCafeOwner());
     }
 
+    @When("user send GET All Artist request to potentivio but not login")
+    public void userSendUnsuccessGETAllArtistRequestToPotentivio() {
+        potentivioAPI.unsuccessGetAllArtist();
+    }
+
     @And("user send GET Profile Artist request to potentivio")
     public void getProfileArtist() {
         potentivioAPI.setTokenArtist();
         potentivioAPI.getProfileArtist(potentivioAPI.getTokenArtist());
     }
 
+    @When("user send GET Profile Artist request to potentivio but not login")
+    public void userSendGETProfileArtistRequestToPotentivioButNotLogin() {
+        potentivioAPI.unsuccessGetProfileArtist();
+    }
+
     @And("user send GET Detail Artist request to potentivio")
     public void getDetailArtist() {
         potentivioAPI.setTokenCafeOwner();
         potentivioAPI.getDetailArtist(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send GET Detail Artist request to potentivio but not login")
+    public void userSendGETDetailArtistRequestToPotentivioButNotLogin() {
+        potentivioAPI.unsuccessGetDetailArtist();
     }
 
     @And("user send PUT Update Artist request to potentivio")
@@ -48,25 +63,10 @@ public class PotentivioStepDef {
     }
 
 
-    @When("user send GET All Artist request to potentivio but not login")
-    public void userSendUnsuccessGETAllArtistRequestToPotentivio() {
-        potentivioAPI.unsuccessGetAllArtist();
-    }
-
     @When("user send DELETE Artist request to potentivio")
     public void userSendDELETEArtistRequestToPotentivio() {
         potentivioAPI.setTokenArtist();
         potentivioAPI.deleteArtist(potentivioAPI.getTokenArtist());
-    }
-
-    @When("user send GET Profile Artist request to potentivio but not login")
-    public void userSendGETProfileArtistRequestToPotentivioButNotLogin() {
-        potentivioAPI.unsuccessGetProfileArtist();
-    }
-
-    @When("user send GET Detail Artist request to potentivio but not login")
-    public void userSendGETDetailArtistRequestToPotentivioButNotLogin() {
-        potentivioAPI.unsuccessGetDetailArtist();
     }
 
 
@@ -80,5 +80,22 @@ public class PotentivioStepDef {
     public void deletevideoArtist() {
         potentivioAPI.deleteVideoArtist(potentivioAPI.getTokenArtist());
         potentivioAPI.setTokenArtist();
+    }
+
+    @When("user send GET All Category Artist request to potentivio")
+    public void getAllCategoryArtist() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.getAllCategory(potentivioAPI.getTokenArtist());
+    }
+
+    @When("user send GET All Category Artist request to potentivio but not login")
+    public void userSendGETAllCategoryArtistRequestToPotentivioButNotLogin() {
+        potentivioAPI.unsuccessGetAllCategory();
+    }
+
+    @When("user send POST Create Category Artist request to potentivio")
+    public void userSendPOSTCreateCategoryArtistRequestToPotentivio() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.postCategoryArtist(potentivioAPI.getTokenArtist());
     }
 }
