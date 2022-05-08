@@ -486,4 +486,29 @@ public class PotentivioAPI {
         }
         System.out.println(token);
     }
+
+    public void postImageCafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/image/cafe");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .header("Content-type", "multipart/form-data; boundary=<calculated when request is sent>")
+                    .multiPart("image_url", new File("/Users/zatihulwani/Downloads/cafe2.jpeg"))
+                    .post(POTENTIVIO_BASEURL + "/image/cafe");
+        }
+        System.out.println(token);
+    }
+    public void deleteImageCafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .delete(POTENTIVIO_BASEURL + "/image/cafe/8");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .delete(POTENTIVIO_BASEURL + "/image/cafe/8");
+        }
+        System.out.println(token);
+    }
 }
