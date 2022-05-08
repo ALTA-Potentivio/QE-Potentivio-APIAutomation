@@ -98,4 +98,16 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenArtist();
         potentivioAPI.postCategoryArtist(potentivioAPI.getTokenArtist());
     }
+
+    @When("user send POST upload image cafe request to potentivio")
+    public void userSendPOSTUploadImageCafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.postImageCafe(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send DELETE image cafe request to potentivio")
+    public void userSendDELETEImageCafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.deleteImageCafe(potentivioAPI.getTokenCafeOwner());
+    }
 }
