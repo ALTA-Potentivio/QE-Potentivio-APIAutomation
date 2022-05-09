@@ -58,7 +58,7 @@ public class PotentivioAPI {
         RequestSpecification request = given();
 
         String payload = "{\n" +
-                "    \"email\": \"testing-cafe@gmail.com\",\n" +
+                "    \"email\": \"testing-cafe2@gmail.com\",\n" +
                 "    \"password\": \"testing-cafe\"\n" +
                 "}";
 
@@ -396,20 +396,20 @@ public class PotentivioAPI {
     public void putUpdateArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
-                    .get(POTENTIVIO_BASEURL + "/artist/30");
+                    .get(POTENTIVIO_BASEURL + "/artist/profile");
         } else {
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
                     .header("Content-type", "multipart/form-data; boundary=<calculated when request is sent>")
-                    .multiPart("id_category", "1")
+                    .multiPart("id_catagory", "15")
                     .multiPart("id_genre", "1")
                     .multiPart("phone_number", "089525525505")
+                    .multiPart("address", "Bandung")
                     .multiPart("price", "600000")
                     .multiPart("description", "artis keren banget")
                     .multiPart("account_number", "01019191818")
                     .multiPart("avatar", new File("/Users/zatihulwani/Downloads/avatar/avatar2.png"))
-                    .multiPart("rating", "0")
-                    .put(POTENTIVIO_BASEURL + "/artist/30");
+                    .put(POTENTIVIO_BASEURL + "/artist/profile");
         }
 
         System.out.println(token);
@@ -418,11 +418,11 @@ public class PotentivioAPI {
         public void deleteArtist(String token) {
             if (token.equalsIgnoreCase("null")) {
                 SerenityRest.given()
-                        .delete(POTENTIVIO_BASEURL + "/artist/30");
+                        .delete(POTENTIVIO_BASEURL + "/artist/profile");
             } else {
                 SerenityRest.given()
                         .header("Authorization", "Bearer " + token)
-                        .delete(POTENTIVIO_BASEURL + "/artist/30");
+                        .delete(POTENTIVIO_BASEURL + "/artist/profile");
             }
             System.out.println(token);
     }
