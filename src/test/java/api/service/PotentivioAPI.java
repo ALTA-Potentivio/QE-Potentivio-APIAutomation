@@ -4,9 +4,9 @@ import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import net.serenitybdd.core.Serenity;
+
 import net.serenitybdd.rest.SerenityRest;
-import net.serenitybdd.screenplay.rest.interactions.Post;
+
 import org.json.JSONObject;
 
 import java.io.File;
@@ -141,11 +141,14 @@ public class PotentivioAPI {
         }
     }
 
-    //Register
+
+
+
+    //Register Artist
     public static void postRegisterArtist() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("artist_name", "testing");
-        bodyJSON.put("email", "testing7@gmail.com");
+        bodyJSON.put("email", "testing3@gmail.com");
         bodyJSON.put("password", "testing");
         bodyJSON.put("address", "jakarta");
 
@@ -168,11 +171,41 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/artist");
     }
 
+    // duplicate email Register Artist
+    public static void duplicateRegisterArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("artist_name","satria the star" );
+        bodyJSON.put("email", "satriaaaa44@gmail.com");
+        bodyJSON.put("password", "satria123");
+        bodyJSON.put("address", "jl. panglima no.11 - jakarta timur");
+
+    }
+    // using Special Character email Register Artist
+    public static void specialcharacterRegisterArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("artist_name","satria the star" );
+        bodyJSON.put("email", "satria_05@gmail.com");
+        bodyJSON.put("password", "satria123");
+        bodyJSON.put("address", "jl. panglima no.11 - jakarta timur");
+
+    }
+
+    // Fill data Register incompleted a Artist
+    public void incompletedRegisterArtist() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("email", "satriarock@gmail.com");
+        bodyJSON.put("password", "therock");
+        bodyJSON.put("address", "");
+    }
+
+    // Register As Cafe Owner
     public static void postRegisterCafeOwner() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("cafe_name", "coffee semesta");
         bodyJSON.put("owner", "satria");
         bodyJSON.put("email", "cafetest1237@gmail.com");
+        bodyJSON.put("email", "cafetest1234@gmail.com");
         bodyJSON.put("password", "password123");
         bodyJSON.put("address", "jl. yosudarso no.12 - jakarta utara");
 
@@ -182,10 +215,39 @@ public class PotentivioAPI {
                 .post(POTENTIVIO_BASEURL + "/cafe");
     }
 
+    public static void postfailedRegisterCafeOwner() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("cafe_name", "coffee semesta");
+        bodyJSON.put("owner", "satria");
+        bodyJSON.put("email", "cafetest1234@gmail.com");
+        bodyJSON.put("password", "password123");
+        bodyJSON.put("address", "jl. yosudarso no.12 - jakarta utara");
+
+    }
+    // using Special Character email Register Cafe Owner
+    public static void failedRegisterAsCafe() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("cafe_name", "coffee semesta");
+        bodyJSON.put("owner", "satria");
+        bodyJSON.put("email", "cafe_test_1234@gmail.com");
+        bodyJSON.put("password", "password12");
+        bodyJSON.put("address", "jl. yosudarso no.12 - jakarta utara");
+
+    }
+    // Fill data Register incompleted a Artist
+    public void incompletedRegisterAsCafe() {
+        JSONObject bodyJSON = new JSONObject();
+        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("email", "satriarock@gmail.com");
+        bodyJSON.put("password", "");
+        bodyJSON.put("address", "");
+    }
+
     //Login Artist
     public void postLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("email", "testing6@gmail.com");
+        bodyJSON.put("email", "testing2@gmail.com");
         bodyJSON.put("password", "testing");
 
         SerenityRest.given()
@@ -198,6 +260,7 @@ public class PotentivioAPI {
     public void wrongpasswordLoginArtist() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("email", "testing6@gmail.com");
+        bodyJSON.put("email", "testing2@gmail.com");
         bodyJSON.put("password", "testing123");
 
         SerenityRest.given()
@@ -265,9 +328,10 @@ public class PotentivioAPI {
     //Login Cafe Owner
     public void postLoginCafeOwner() {
         JSONObject bodyJSON = new JSONObject();
-
         bodyJSON.put("email", "testing-cafe2@gmail.com");
         bodyJSON.put("password", "testing-cafe");
+        bodyJSON.put("email", "cafesemestasss@gmail.com");
+        bodyJSON.put("password", "password123");
 
         SerenityRest.given()
                 .header("Content-type", "application/json")
@@ -277,8 +341,8 @@ public class PotentivioAPI {
 
     public void wrongpasswordloginCafeOwner() {
         JSONObject bodyJSON = new JSONObject();
-
         bodyJSON.put("email", "testing-cafe2@gmail.com");
+        bodyJSON.put("email", "cafesemestasss@gmail.com");
         bodyJSON.put("password", "password12345");
 
         SerenityRest.given()
@@ -408,6 +472,9 @@ public class PotentivioAPI {
                     .multiPart("id_genre", "1")
                     .multiPart("phone_number", "089525525505")
                     .multiPart("address", "Bandung")
+                    .multiPart("id_category", "1")
+                    .multiPart("id_genre", "1")
+                    .multiPart("phone_number", "089525525505")
                     .multiPart("price", "600000")
                     .multiPart("description", "artis keren banget")
                     .multiPart("account_number", "01019191818")
@@ -438,6 +505,7 @@ public class PotentivioAPI {
         } else {
             JSONObject bodyJSON = new JSONObject();
             bodyJSON.put("video_url", "youtube.com/usamah1234");
+            bodyJSON.put("video_url", "youtube.com/usamah123");
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
                     .post(POTENTIVIO_BASEURL + "/video/artist");

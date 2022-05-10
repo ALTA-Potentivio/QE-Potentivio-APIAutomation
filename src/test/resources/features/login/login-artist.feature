@@ -3,7 +3,6 @@ Feature: Login Artist
 
 
   @successlogin
-
   Scenario: Successful POST login artist
     When user send POST login artist request to potentivio
     Then response status code should be 200

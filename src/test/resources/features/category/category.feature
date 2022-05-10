@@ -21,3 +21,4 @@ Feature: Category
     Then response status code should be 400
     And response structure should match json schema "unsuccess-get-all-category.json" from "Category"
 
+

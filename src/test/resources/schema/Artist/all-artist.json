@@ -228,7 +228,7 @@
               "type": "string"
             },
             "avatar": {
-              "type": "null"
+              "type": "string"
             },
             "catagory": {
               "type": "object",
@@ -246,7 +246,7 @@
               ]
             },
             "description": {
-              "type": "null"
+              "type": "string"
             },
             "genre": {
               "type": "object",
@@ -270,10 +270,10 @@
               "type": "null"
             },
             "id_genre": {
-              "type": "null"
+              "type": "integer"
             },
             "price": {
-              "type": "null"
+              "type": "integer"
             }
           },
           "required": [
