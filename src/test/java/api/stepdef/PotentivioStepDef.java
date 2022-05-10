@@ -1,0 +1,101 @@
+package api.stepdef;
+
+import api.service.PotentivioAPI;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class PotentivioStepDef {
+
+    PotentivioAPI potentivioAPI = new PotentivioAPI();
+//    String URL;
+
+    @Given("user has already had login token as artist")
+    public void userHasAlreadyHadLoginTokeAsArtist() {
+        potentivioAPI.setTokenArtist();
+    }
+    @Given("user has already had login token as cafe-owner")
+    public void userHasAlreadyHadLoginTokenAsCafe() {
+        potentivioAPI.setTokenCafeOwner();
+    }
+    @Given("user has not already had login token")
+    public void userHasNotAlreadyHadLoginToken() {
+        potentivioAPI.setTokenNoLogin("null");
+    }
+
+    @When("user send GET All Artist request to potentivio")
+    public void getallArtist()  {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.getAllArtist(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send GET All Artist request to potentivio but not login")
+    public void userSendUnsuccessGETAllArtistRequestToPotentivio() {
+        potentivioAPI.unsuccessGetAllArtist();
+    }
+
+    @And("user send GET Profile Artist request to potentivio")
+    public void getProfileArtist() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.getProfileArtist(potentivioAPI.getTokenArtist());
+    }
+
+    @When("user send GET Profile Artist request to potentivio but not login")
+    public void userSendGETProfileArtistRequestToPotentivioButNotLogin() {
+        potentivioAPI.unsuccessGetProfileArtist();
+    }
+
+    @And("user send GET Detail Artist request to potentivio")
+    public void getDetailArtist() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.getDetailArtist(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send GET Detail Artist request to potentivio but not login")
+    public void userSendGETDetailArtistRequestToPotentivioButNotLogin() {
+        potentivioAPI.unsuccessGetDetailArtist();
+    }
+
+    @And("user send PUT Update Artist request to potentivio")
+    public void putUpdateArtist() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.putUpdateArtist(potentivioAPI.getTokenArtist());
+    }
+
+
+    @When("user send DELETE Artist request to potentivio")
+    public void userSendDELETEArtistRequestToPotentivio() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.deleteArtist(potentivioAPI.getTokenArtist());
+    }
+
+
+    @And("user send POST video artist request to potentivio")
+    public void postvideoArtist() {
+        potentivioAPI.postVideoArtist(potentivioAPI.getTokenArtist());
+        potentivioAPI.setTokenArtist();
+    }
+
+    @And("user send DELETE video artist request to potentivio")
+    public void deletevideoArtist() {
+        potentivioAPI.deleteVideoArtist(potentivioAPI.getTokenArtist());
+        potentivioAPI.setTokenArtist();
+    }
+
+    @When("user send GET All Category Artist request to potentivio")
+    public void getAllCategoryArtist() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.getAllCategory(potentivioAPI.getTokenArtist());
+    }
+
+    @When("user send GET All Category Artist request to potentivio but not login")
+    public void userSendGETAllCategoryArtistRequestToPotentivioButNotLogin() {
+        potentivioAPI.unsuccessGetAllCategory();
+    }
+
+    @When("user send POST Create Category Artist request to potentivio")
+    public void userSendPOSTCreateCategoryArtistRequestToPotentivio() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.postCategoryArtist(potentivioAPI.getTokenArtist());
+    }
+}
