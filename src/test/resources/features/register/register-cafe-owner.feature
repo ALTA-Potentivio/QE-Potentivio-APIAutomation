@@ -1,3 +1,4 @@
+@all
 Feature: Register Cafe Owner
 
   @positive

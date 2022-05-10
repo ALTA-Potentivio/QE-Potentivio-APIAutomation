@@ -1,4 +1,4 @@
-@image-cafe
+@all @image-cafe
 Feature: Image Cafe
 
   @post-image
