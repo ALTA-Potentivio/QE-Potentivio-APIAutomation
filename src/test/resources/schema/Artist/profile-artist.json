@@ -27,7 +27,7 @@
           "type": "integer"
         },
         "id_catagory": {
-          "type": "null"
+          "type": "integer"
         },
         "id_genre": {
           "type": "integer"
@@ -52,7 +52,23 @@
         },
         "video_artist": {
           "type": "array",
-          "items": {}
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "video_url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "video_url"
+              ]
+            }
+          ]
         }
       },
       "required": [

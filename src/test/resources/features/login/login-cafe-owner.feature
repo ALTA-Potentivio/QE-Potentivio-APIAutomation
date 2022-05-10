@@ -1,3 +1,4 @@
+@all
 Feature: Login Cafe Owner
 
   Scenario: Successful POST login cafe owner

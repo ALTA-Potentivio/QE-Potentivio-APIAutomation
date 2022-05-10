@@ -1,4 +1,4 @@
-@video-artist
+@all @video-artist
 Feature: Video Artist
 
   @post-video
