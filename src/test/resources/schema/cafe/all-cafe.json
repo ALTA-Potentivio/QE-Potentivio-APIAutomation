@@ -1,0 +1,450 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "null"
+            },
+            "avatar": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "cafe_name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "cafe_name",
+            "address",
+            "description",
+            "avatar"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}
