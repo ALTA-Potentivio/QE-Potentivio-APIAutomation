@@ -1,4 +1,4 @@
-@register
+@all @register
 Feature: Register Artist
 
   @positive
