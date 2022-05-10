@@ -110,4 +110,47 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenCafeOwner();
         potentivioAPI.deleteImageCafe(potentivioAPI.getTokenCafeOwner());
     }
+
+    @When("user send GET All Cafe request to potentivio")
+    public void userSendGETAllCafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.getAllCafe(potentivioAPI.getTokenArtist());
+    }
+
+    @When("user send GET Profile Cafe request to potentivio")
+    public void userSendGETProfileCafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.getProfilecafe(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send GET Detail Cafe by id request to potentivio")
+    public void userSendGETDetailCafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.getDetailcafe(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send PUT Update Cafe request to potentivio")
+    public void userSendPUTUpdateCafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.putUpdateCafe(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send DELETE Cafe request to potentivio")
+    public void userSendDELETECafeRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.deleteCafe(potentivioAPI.getTokenCafeOwner());
+    }
+
+    @When("user send POST Create Genre Music artist request to potentivio")
+    public void userSendPOSTCreateGenreMusicArtistRequestToPotentivio() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.postCreateGenre(potentivioAPI.getTokenArtist());
+
+    }
+
+    @When("user send  Get All Genre Music artist request to potentivio")
+    public void userSendGetAllGenreMusicArtistRequestToPotentivio() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.getAllGenre(potentivioAPI.getTokenArtist());
+    }
 }

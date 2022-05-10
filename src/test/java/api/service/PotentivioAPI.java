@@ -1,9 +1,12 @@
 package api.service;
 
+import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.rest.SerenityRest;
+import net.serenitybdd.screenplay.rest.interactions.Post;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -26,8 +29,8 @@ public class PotentivioAPI {
         RequestSpecification request = given();
 
         String payload = "{\n" +
-                "    \"email\": \"testing2@gmail.com\",\n" +
-                "    \"password\": \"testing\"\n" +
+                "    \"email\": \"binpan@gmail.com\",\n" +
+                "    \"password\": \"binpan123\"\n" +
                 "}";
 
         request.header("Content-Type", "application/json");
@@ -58,8 +61,8 @@ public class PotentivioAPI {
         RequestSpecification request = given();
 
         String payload = "{\n" +
-                "    \"email\": \"testing-cafe@gmail.com\",\n" +
-                "    \"password\": \"testing-cafe\"\n" +
+                "    \"email\": \"cups@gmail.com\",\n" +
+                "    \"password\": \"cups123\"\n" +
                 "}";
 
         request.header("Content-Type", "application/json");
@@ -511,4 +514,99 @@ public class PotentivioAPI {
         }
         System.out.println(token);
     }
+
+    // Cafe
+
+    public void getAllCafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/cafe");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/cafe");
+        }
+        System.out.println(token);
+    }
+
+    public void getProfilecafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/cafe/profile");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/cafe/profile");
+        }
+        System.out.println(token);
+    }
+
+    public void getDetailcafe(String token){
+        if (token.equalsIgnoreCase("null")){
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/cafe/49");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/cafe/49");
+        }
+        System.out.println(token);
+    }
+
+    public void deleteCafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .delete(POTENTIVIO_BASEURL + "/cafe/profile");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .header("Content-Type", "application/json").contentType(ContentType.JSON).accept(ContentType.JSON)
+                    .delete(POTENTIVIO_BASEURL + "/cafe/profile");
+        }
+        System.out.println(token);
+    }
+    public void putUpdateCafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .put(POTENTIVIO_BASEURL + "/cafe/profile");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .header("Content-type", "multipart/form-data; boundary=<calculated when request is sent>")
+                    .multiPart("cafe_Name", "cafe belakang rumah")
+                    .put(POTENTIVIO_BASEURL + "/cafe/profile");
+        }
+
+        System.out.println(token);
+    }
+
+    // Genre
+    
+    public void postCreateGenre( String token){
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/genre");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("name_genre", "dangdut");
+            SerenityRest.given()
+                    .header("Content-type", "application/json")
+                    .body(bodyJSON.toString())
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/genre");
+        }
+        System.out.println(token);
+        }
+
+        public void getAllGenre(String token) {
+            if (token.equalsIgnoreCase("null")) {
+                SerenityRest.given()
+                        .get(POTENTIVIO_BASEURL + "/genre");
+            }else {
+                SerenityRest.given()
+                        .header("Authorization", "Bearer " + token)
+                        .get(POTENTIVIO_BASEURL + "/genre");
+            }
+            System.out.println(token);
+        }
 }
