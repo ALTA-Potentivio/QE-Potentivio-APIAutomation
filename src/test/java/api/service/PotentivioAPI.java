@@ -49,6 +49,37 @@ public class PotentivioAPI {
         }
     }
 
+    //Getters and Setters
+    public String getTokenArtistDua() {
+        return bearerToken;
+    }
+
+    //artist
+    public void setTokenArtistDua() {
+
+        RequestSpecification request = given();
+
+        String payload = "{\n" +
+                "    \"email\": \"testingQE2@gmail.com\",\n" +
+                "    \"password\": \"testing\"\n" +
+                "}";
+
+        request.header("Content-Type", "application/json");
+        Response responsePostMethod = request.body(payload)
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+
+        responsePostMethod.prettyPeek();
+
+        String jsonString = responsePostMethod.getBody().asString();
+        int responseCode = responsePostMethod.statusCode();
+
+        if (responseCode != 200) {
+            this.bearerToken = "null";
+        } else {
+            this.bearerToken = JsonPath.from(jsonString).get("data.token");
+        }
+    }
+
 
     //cafe-owner
 
@@ -81,48 +112,17 @@ public class PotentivioAPI {
         }
     }
 
-    // no-login-artist
-    public String getTokenNoLogin() {
+    public String getTokenCafeOwnerDua() {
         return bearerToken;
     }
 
-    public void setTokenNoLogin(String aNull) {
+    public void setTokenCafeOwnerDua() {
 
         RequestSpecification request = given();
 
         String payload = "{\n" +
-                "  \"email\": \"\",\n" +
-                "  \"password\": \"\"\n" +
-                "}";
-
-        request.header("Content-Type", "application/json");
-        Response responsePostMethod = request.body(payload)
-                .post(POTENTIVIO_BASEURL + "/login/artist");
-
-        responsePostMethod.prettyPeek();
-
-        String jsonString = responsePostMethod.getBody().asString();
-        int responseCode = responsePostMethod.statusCode();
-
-        if (responseCode != 200) {
-            this.bearerToken = "null";
-        } else {
-            this.bearerToken = JsonPath.from(jsonString).get("data.token");
-        }
-    }
-
-    // no-login-cafe-owner
-    public String getTokenNoLoginCafe() {
-        return bearerToken;
-    }
-
-    public void setTokenNoLoginCafe(String aNull) {
-
-        RequestSpecification request = given();
-
-        String payload = "{\n" +
-                "  \"email\": \"\",\n" +
-                "  \"password\": \"\"\n" +
+                "    \"email\": \"testing-cafe5@gmail.com\",\n" +
+                "    \"password\": \"testing-cafe\"\n" +
                 "}";
 
         request.header("Content-Type", "application/json");
@@ -141,12 +141,11 @@ public class PotentivioAPI {
         }
     }
 
-
     //Register Artist
     public static void postRegisterArtist() {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("artist_name", "testing");
-        bodyJSON.put("email", "testing4@gmail.com");
+        bodyJSON.put("email", "testing5@gmail.com");
         bodyJSON.put("password", "testing");
         bodyJSON.put("address", "jakarta");
 
@@ -219,7 +218,7 @@ public class PotentivioAPI {
         JSONObject bodyJSON = new JSONObject();
         bodyJSON.put("cafe_name", "coffee semesta");
         bodyJSON.put("owner", "satria");
-        bodyJSON.put("email", "cafetest1239@gmail.com");
+        bodyJSON.put("email", "testing-cafe3@gmail.com");
         bodyJSON.put("password", "password123");
         bodyJSON.put("address", "jl. yosudarso no.12 - jakarta utara");
 
@@ -565,18 +564,6 @@ public class PotentivioAPI {
         System.out.println(token);
     }
 
-
-    public void posthireArtist(String token) {
-        if (token.equalsIgnoreCase("null")) {
-            SerenityRest.given()
-                    .post(POTENTIVIO_BASEURL + "/hire/71");
-        } else {
-            JSONObject bodyJSON = new JSONObject();
-            bodyJSON.put("date", "2022-04-30T15:00:00Z0700");
-            SerenityRest.given()
-                    .header("Authorization", "Bearer " + token)
-                    .post(POTENTIVIO_BASEURL + "/hire/71");
-
     //Category Artist
     public void getAllCategory(String token) {
         if (token.equalsIgnoreCase("null")) {
@@ -590,6 +577,42 @@ public class PotentivioAPI {
         System.out.println(token);
     }
 
+    public void unsuccessGetAllCategory() {
+        SerenityRest.given()
+                .get(POTENTIVIO_BASEURL + "/category");
+    }
+
+    public void postCategoryArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/category");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("name_catagory", "Duo");
+            SerenityRest.given()
+                    .header("Content-type", "application/json")
+                    .body(bodyJSON.toString())
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/category");
+        }
+        System.out.println(token);
+    }
+
+    //hire
+    public void posthireArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/hire/105");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("date", "2022-04-30T15:00:00Z0700");
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/hire/105");
+
+        }
+        System.out.println(token);
+    }
 
     public void postacceptArtist(String token) {
         if (token.equalsIgnoreCase("null")) {
@@ -673,27 +696,14 @@ public class PotentivioAPI {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
                     .get(POTENTIVIO_BASEURL + "/hire/artist");
-    public void unsuccessGetAllCategory() {
-        SerenityRest.given()
-                .get(POTENTIVIO_BASEURL + "/category");
-    }
-
-    public void postCategoryArtist(String token) {
-        if (token.equalsIgnoreCase("null")) {
-            SerenityRest.given()
-                    .post(POTENTIVIO_BASEURL + "/category");
         } else {
-            JSONObject bodyJSON = new JSONObject();
-            bodyJSON.put("name_catagory", "Duo");
             SerenityRest.given()
-                    .header("Content-type", "application/json")
-                    .body(bodyJSON.toString())
                     .header("Authorization", "Bearer " + token)
-                    .get(POTENTIVIO_BASEURL + "/hire/artist");
-                    .post(POTENTIVIO_BASEURL + "/category");
+                    .get(POTENTIVIO_BASEURL + "/hire/cafe");
         }
         System.out.println(token);
     }
+
 
     public void postImageCafe(String token) {
         if (token.equalsIgnoreCase("null")) {
@@ -712,11 +722,11 @@ public class PotentivioAPI {
     public void deleteImageCafe(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
-                    .delete(POTENTIVIO_BASEURL + "/image/cafe/10");
+                    .delete(POTENTIVIO_BASEURL + "/image/cafe/11");
         } else {
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
-                    .delete(POTENTIVIO_BASEURL + "/image/cafe/10");
+                    .delete(POTENTIVIO_BASEURL + "/image/cafe/11");
         }
         System.out.println(token);
     }
@@ -820,15 +830,16 @@ public class PotentivioAPI {
     public void postNotification(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
-                    .post(POTENTIVIO_BASEURL + "/offer/57");
+                    .post(POTENTIVIO_BASEURL + "/offer/18");
 
         } else {
             SerenityRest.given()
                     .header("Authorization", "Bearer " + token)
-                    .post(POTENTIVIO_BASEURL + "/offer/57");
+                    .post(POTENTIVIO_BASEURL + "/offer/18");
         }
         System.out.println(token);
     }
+
     public void getAllNotification(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()

@@ -1,4 +1,4 @@
-@Genre
+@all @Genre
 
 Feature: Genre
 
