@@ -142,8 +142,6 @@ public class PotentivioAPI {
     }
 
 
-
-
     //Register Artist
     public static void postRegisterArtist() {
         JSONObject bodyJSON = new JSONObject();
@@ -162,7 +160,7 @@ public class PotentivioAPI {
     // duplicate email Register Artist
     public static void duplicateRegisterArtist() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the star" );
+        bodyJSON.put("artist_name", "satria the star");
         bodyJSON.put("email", "satriaaaa44@gmail.com");
         bodyJSON.put("password", "satria123");
         bodyJSON.put("address", "jl. panglima no.11 - jakarta timur");
@@ -177,20 +175,21 @@ public class PotentivioAPI {
     // Register Artist Empty Email
     public void postRegisterArtistEmptyEmail() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("artist_name", "satria the rock");
         bodyJSON.put("email", "");
         bodyJSON.put("password", "testing");
         bodyJSON.put("address", "Jakarta");
 
-       SerenityRest.given()
-               .header("Content-type", "application/json")
+        SerenityRest.given()
+                .header("Content-type", "application/json")
                 .body(bodyJSON.toString())
-            .post(POTENTIVIO_BASEURL + "/artist");
-}
+                .post(POTENTIVIO_BASEURL + "/artist");
+    }
+
     // Register Artist Empty Password
     public void postRegisterArtistEmptyPassword() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("artist_name", "satria the rock");
         bodyJSON.put("email", "satriaaaa44@gmail.com");
         bodyJSON.put("password", "");
         bodyJSON.put("address", "Jakarta");
@@ -200,9 +199,10 @@ public class PotentivioAPI {
                 .body(bodyJSON.toString())
                 .post(POTENTIVIO_BASEURL + "/artist");
     }
+
     public void postRegisterArtistEmptyEmailPassword() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("artist_name", "satria the rock");
         bodyJSON.put("email", "");
         bodyJSON.put("password", "");
         bodyJSON.put("address", "Jakarta");
@@ -248,7 +248,7 @@ public class PotentivioAPI {
     // Register Cafe Owner with empty email
     public void postRegisterCafeEmptyEmail() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("artist_name", "satria the rock");
         bodyJSON.put("email", "");
         bodyJSON.put("password", "123");
         bodyJSON.put("address", "Bandung");
@@ -262,7 +262,7 @@ public class PotentivioAPI {
     // Register Cafe Owner with empty password
     public void postRegisterCafeEmptyPassword() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("artist_name", "satria the rock");
         bodyJSON.put("email", "cafetest1239@gmail.com");
         bodyJSON.put("password", "");
         bodyJSON.put("address", "Bandung");
@@ -275,7 +275,7 @@ public class PotentivioAPI {
 
     public void postRegisterCafeEmptyEmailPassword() {
         JSONObject bodyJSON = new JSONObject();
-        bodyJSON.put("artist_name","satria the rock" );
+        bodyJSON.put("artist_name", "satria the rock");
         bodyJSON.put("email", "");
         bodyJSON.put("password", "");
         bodyJSON.put("address", "Bandung");
@@ -528,16 +528,16 @@ public class PotentivioAPI {
         System.out.println(token);
     }
 
-        public void deleteArtist(String token) {
-            if (token.equalsIgnoreCase("null")) {
-                SerenityRest.given()
-                        .delete(POTENTIVIO_BASEURL + "/artist/profile");
-            } else {
-                SerenityRest.given()
-                        .header("Authorization", "Bearer " + token)
-                        .delete(POTENTIVIO_BASEURL + "/artist/profile");
-            }
-            System.out.println(token);
+    public void deleteArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .delete(POTENTIVIO_BASEURL + "/artist/profile");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .delete(POTENTIVIO_BASEURL + "/artist/profile");
+        }
+        System.out.println(token);
     }
 
     //Video Artist
@@ -580,6 +580,7 @@ public class PotentivioAPI {
         }
         System.out.println(token);
     }
+
     public void unsuccessGetAllCategory() {
         SerenityRest.given()
                 .get(POTENTIVIO_BASEURL + "/category");
@@ -614,6 +615,7 @@ public class PotentivioAPI {
         }
         System.out.println(token);
     }
+
     public void deleteImageCafe(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
@@ -652,8 +654,8 @@ public class PotentivioAPI {
         System.out.println(token);
     }
 
-    public void getDetailcafe(String token){
-        if (token.equalsIgnoreCase("null")){
+    public void getDetailcafe(String token) {
+        if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
                     .get(POTENTIVIO_BASEURL + "/cafe/49");
         } else {
@@ -676,6 +678,7 @@ public class PotentivioAPI {
         }
         System.out.println(token);
     }
+
     public void putUpdateCafe(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
@@ -692,8 +695,8 @@ public class PotentivioAPI {
     }
 
     // Genre
-    
-    public void postCreateGenre( String token){
+
+    public void postCreateGenre(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
                     .post(POTENTIVIO_BASEURL + "/genre");
@@ -707,17 +710,41 @@ public class PotentivioAPI {
                     .post(POTENTIVIO_BASEURL + "/genre");
         }
         System.out.println(token);
-        }
+    }
 
-        public void getAllGenre(String token) {
-            if (token.equalsIgnoreCase("null")) {
-                SerenityRest.given()
-                        .get(POTENTIVIO_BASEURL + "/genre");
-            }else {
-                SerenityRest.given()
-                        .header("Authorization", "Bearer " + token)
-                        .get(POTENTIVIO_BASEURL + "/genre");
-            }
-            System.out.println(token);
+    public void getAllGenre(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/genre");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/genre");
         }
+        System.out.println(token);
+    }
+
+    public void postNotification(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/offer/57");
+
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/offer/57");
+        }
+        System.out.println(token);
+    }
+    public void getAllNotification(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .get(POTENTIVIO_BASEURL + "/offer");
+        } else {
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .get(POTENTIVIO_BASEURL + "/offer");
+        }
+        System.out.println(token);
+    }
 }
