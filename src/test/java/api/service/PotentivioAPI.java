@@ -80,6 +80,68 @@ public class PotentivioAPI {
         }
     }
 
+    //Getters and Setters
+    public String getTokenArtistTiga() {
+        return bearerToken;
+    }
+
+    //artist
+    public void setTokenArtistTiga() {
+
+        RequestSpecification request = given();
+
+        String payload = "{\n" +
+                "    \"email\": \"testing8@gmail.com\",\n" +
+                "    \"password\": \"testing\"\n" +
+                "}";
+
+        request.header("Content-Type", "application/json");
+        Response responsePostMethod = request.body(payload)
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+
+        responsePostMethod.prettyPeek();
+
+        String jsonString = responsePostMethod.getBody().asString();
+        int responseCode = responsePostMethod.statusCode();
+
+        if (responseCode != 200) {
+            this.bearerToken = "null";
+        } else {
+            this.bearerToken = JsonPath.from(jsonString).get("data.token");
+        }
+    }
+
+    //Getters and Setters
+    public String getTokenArtistEmpat() {
+        return bearerToken;
+    }
+
+    //artist
+    public void setTokenArtistEmpat() {
+
+        RequestSpecification request = given();
+
+        String payload = "{\n" +
+                "    \"email\": \"testing9@gmail.com\",\n" +
+                "    \"password\": \"testing\"\n" +
+                "}";
+
+        request.header("Content-Type", "application/json");
+        Response responsePostMethod = request.body(payload)
+                .post(POTENTIVIO_BASEURL + "/login/artist");
+
+        responsePostMethod.prettyPeek();
+
+        String jsonString = responsePostMethod.getBody().asString();
+        int responseCode = responsePostMethod.statusCode();
+
+        if (responseCode != 200) {
+            this.bearerToken = "null";
+        } else {
+            this.bearerToken = JsonPath.from(jsonString).get("data.token");
+        }
+    }
+
 
     //cafe-owner
 
@@ -600,6 +662,35 @@ public class PotentivioAPI {
 
     //hire
     public void posthireArtist(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/hire/105");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("date", "2022-04-30T15:00:00Z0700");
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/hire/105");
+
+        }
+        System.out.println(token);
+    }
+
+    public void posthireArtistTiga(String token) {
+        if (token.equalsIgnoreCase("null")) {
+            SerenityRest.given()
+                    .post(POTENTIVIO_BASEURL + "/hire/105");
+        } else {
+            JSONObject bodyJSON = new JSONObject();
+            bodyJSON.put("date", "2022-04-30T15:00:00Z0700");
+            SerenityRest.given()
+                    .header("Authorization", "Bearer " + token)
+                    .post(POTENTIVIO_BASEURL + "/hire/105");
+
+        }
+        System.out.println(token);
+    }
+    public void posthireArtistEmpat(String token) {
         if (token.equalsIgnoreCase("null")) {
             SerenityRest.given()
                     .post(POTENTIVIO_BASEURL + "/hire/105");

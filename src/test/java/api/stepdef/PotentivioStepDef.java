@@ -26,6 +26,16 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenArtistDua();
     }
 
+    @Given("user has already had login token as artist 3")
+    public void userHasAlreadyHadLoginTokeAsArtistTiga() {
+        potentivioAPI.setTokenArtistTiga();
+    }
+
+    @Given("user has already had login token as artist 4")
+    public void userHasAlreadyHadLoginTokeAsArtistEmpat() {
+        potentivioAPI.setTokenArtistTiga();
+    }
+
 
     @Given("user has already had login token as cafe-owner 2")
     public void userHasAlreadyHadLoginTokenAsCafeDua() {
@@ -99,6 +109,18 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenCafeOwnerDua();
     }
 
+    @And("user send POST hire artist 3 request to potentivio")
+    public void postHireArtistTiga() {
+        potentivioAPI.posthireArtistTiga(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
+    }
+
+    @And("user send POST hire artist 4 request to potentivio")
+    public void posthireArtistEmpat() {
+        potentivioAPI.posthireArtistEmpat(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
+    }
+
     @And("user send POST accept request to potentivio")
     public void postAcceptArtist() {
         potentivioAPI.postacceptArtist(potentivioAPI.getTokenArtistDua());
@@ -107,14 +129,14 @@ public class PotentivioStepDef {
 
     @And("user send PUT reject accept request to potentivio")
     public void putRejectArtist() {
-        potentivioAPI.putrejectArtist(potentivioAPI.getTokenArtistDua());
-        potentivioAPI.setTokenArtistDua();
+        potentivioAPI.putrejectArtist(potentivioAPI.getTokenArtistTiga());
+        potentivioAPI.setTokenArtistTiga();
     }
 
     @And("user send PUT cancel accept request to potentivio")
     public void putCancelArtist() {
-        potentivioAPI.putcancelArtist(potentivioAPI.getTokenArtistDua());
-        potentivioAPI.setTokenArtistDua();
+        potentivioAPI.putcancelArtist(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
     }
 
     @And("user send PUT rating accept request to potentivio")
