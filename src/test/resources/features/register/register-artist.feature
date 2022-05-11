@@ -1,32 +1,34 @@
 @all @register
 Feature: Register Artist
 
-  @positive
+  @positive @successregisterartist
   Scenario: Success POST Register artist
     When user send POST Register artist request to potentivio
     Then response status code should be 200
     And response structure should match json schema "register-artist.json" from "Register"
 
-  @negative-register
-  Scenario: Unsuccess POST Register artist
-    When user send POST failed Register artist request to potentivio
-    Then response status code should be 500
-    And response structure should match json schema "failed500-register-artist.json" from "Register"
 
-  @failedregister @duplicateemail
+  @negative @failedregisterartist @duplicateemail
     Scenario:  Duplicate email POST Register artist
     When user send POST duplicate email Register request to potentivio
     Then response status code should be 500
     And  response structure should match json schema "failed500-register-artist.json" from "Register"
 
-  @successregister @email
-    Scenario: success POST Register artist Email using special character
-    When user send POST Register artist using Email special character request to potentivio
-    Then response status code should be 200
-    And  response structure should match json schema "register-artist.json" from "Register"
 
-  @failedregister @incompleteddata
-    Scenario: Unsuccess POST Register artist incomplete data
-    When user send POST Register artist the data not complete request to potentivio
+  @negative @failedregisterartist @emptyemail
+    Scenario: Unsuccess POST Register artist with empty email
+    When user send POST Register artist with empty email request to potentivio
     Then response status code should be 500
-    And  response structure should match json schema "failed-register-artist.json" from "Register"
+    And  response structure should match json schema "failed-empty-email.json" from "Register"
+
+  @negative @failedregisterartist @emptypassword
+  Scenario: Unsuccess POST Register artist with empty password
+    When user send POST Register artist with empty password request to potentivio
+    Then response status code should be 500
+    And  response structure should match json schema "failed-empty-password.json" from "Register"
+
+  @negative @failedregisterartist @emptyemailandpassword
+  Scenario: Unsuccess POST Register artist with empty email and password
+    When user send POST Register artist with empty email and password request to potentivio
+    Then response status code should be 500
+    And  response structure should match json schema "failed-register-emptyemailpassword.json" from "Register"

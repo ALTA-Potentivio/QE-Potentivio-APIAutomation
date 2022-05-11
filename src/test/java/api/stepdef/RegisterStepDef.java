@@ -8,40 +8,59 @@ public class RegisterStepDef {
 
     PotentivioAPI potentivioAPI = new PotentivioAPI();
 
-
-    @When("user send POST duplicate email Register request to potentivio")
-    public void postduplicateregisterArtist() { potentivioAPI.duplicateRegisterArtist();}
-
-    @When("user send POST Register artist using Email special character request to potentivio")
-    public void postspecialcharacterregisterArtist() { potentivioAPI.specialcharacterRegisterArtist();}
-
-    @When("user send POST Register artist the data not complete request to potentivio")
-    public void postincompleteregisterArtist() { potentivioAPI.incompletedRegisterArtist();}
-
-    @When("user send POST duplicate email Register As Cafe Owner request to potentivio")
-    public void failedpostduplicateregistercafeowner() { potentivioAPI.postfailedRegisterCafeOwner();}
-
-    @When("user send POST Register Cafe Owner with Email special character request to potentivio")
-    public void failedpostwithemailspecialcharacter() { potentivioAPI.failedRegisterAsCafe();}
-
-    @When("user send POST Register Cafe Owner the data not complete request to potentivio")
-    public void failedpostdataincompleted() { potentivioAPI.incompletedRegisterAsCafe();}
-
-    @And("user send POST Register artist request to potentivio")
+    //register artist
+    @When("user send POST Register artist request to potentivio")
     public void postregisterArtist() {
         potentivioAPI.postRegisterArtist();
     }
 
-    @And("user send POST failed Register artist request to potentivio")
-    public void failedPostRegisterArtist() {
-        potentivioAPI.failedPostRegisterArtist();
+    @When("user send POST duplicate email Register request to potentivio")
+    public void postDuplicateRegisterArtist() {
+        potentivioAPI.duplicateRegisterArtist();}
+
+
+    @When("user send POST Register artist with empty email request to potentivio")
+    public void postRegisterArtistEmptyEmail() {
+        potentivioAPI.postRegisterArtistEmptyEmail();
     }
 
-    @And("user send POST Register cafe owner request to potentivio")
-    public void postregisterCafeOwner() {
+    @When("user send POST Register artist with empty password request to potentivio")
+    public void postRegisterArtistEmptyPassword() {
+        potentivioAPI.postRegisterArtistEmptyPassword();
+    }
+
+    @When("user send POST Register artist with empty email and password request to potentivio")
+    public void postRegisterArtistEmptyEmailPassword() {
+        potentivioAPI.postRegisterArtistEmptyEmailPassword();
+    }
+
+    //register owner cafe
+    @When("user send POST Register cafe owner request to potentivio")
+    public void postRegisterCafeOwner() {
         potentivioAPI.postRegisterCafeOwner();
     }
 
+    @When("user send POST duplicate email Register as Cafe Owner request to potentivio")
+    public void duplicateEmailRegisterCafeOwner() {
+        potentivioAPI.failedRegisterAsCafe();
+    }
+
+
+    @When("user send POST Register Cafe Owner with empty email request to potentivio")
+    public void postRegisterCafeEmptyEmail() {
+        potentivioAPI.postRegisterCafeEmptyEmail();
+    }
+
+    @When("user send POST Register Cafe Owner with empty password request to potentivio")
+    public void postRegisterCafeEmptyPassword() {
+        potentivioAPI.postRegisterCafeEmptyPassword();
+    }
+
+
+    @When("user send POST Register Cafe Owner with empty email and password request to potentivio")
+    public void postRegisterCafeEmptyEmailPassword() {
+        potentivioAPI.postRegisterCafeEmptyEmailPassword();
+    }
 }
 
 
