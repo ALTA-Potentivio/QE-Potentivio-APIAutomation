@@ -2,228 +2,31 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
+    "message": {
+      "type": "string"
+    },
     "data": {
       "type": "array",
       "items": [
         {
           "type": "object",
           "properties": {
-            "address": {
-              "type": "string"
+            "id": {
+              "type": "integer"
             },
             "artist_name": {
               "type": "string"
             },
-            "avatar": {
-              "type": "null"
-            },
-            "catagory": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_catagory": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_catagory"
-              ]
-            },
-            "description": {
-              "type": "null"
-            },
-            "genre": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_genre": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_genre"
-              ]
-            },
-            "id": {
+            "id_category": {
               "type": "integer"
             },
-            "id_catagory": {
-              "type": "null"
-            },
             "id_genre": {
-              "type": "null"
+              "type": "integer"
             },
-            "price": {
-              "type": "null"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
             "address": {
               "type": "string"
             },
-            "artist_name": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "null"
-            },
-            "catagory": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_catagory": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_catagory"
-              ]
-            },
-            "description": {
-              "type": "null"
-            },
-            "genre": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_genre": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_genre"
-              ]
-            },
-            "id": {
-              "type": "integer"
-            },
-            "id_catagory": {
-              "type": "null"
-            },
-            "id_genre": {
-              "type": "null"
-            },
-            "price": {
-              "type": "null"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "address": {
-              "type": "string"
-            },
-            "artist_name": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "null"
-            },
-            "catagory": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_catagory": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_catagory"
-              ]
-            },
-            "description": {
-              "type": "null"
-            },
-            "genre": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_genre": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_genre"
-              ]
-            },
-            "id": {
-              "type": "integer"
-            },
-            "id_catagory": {
-              "type": "null"
-            },
-            "id_genre": {
-              "type": "null"
-            },
-            "price": {
-              "type": "null"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "address": {
-              "type": "string"
-            },
+
             "artist_name": {
               "type": "string"
             },
@@ -1692,34 +1495,15 @@
             "id_genre": {
               "type": "null"
             },
+
             "price": {
-              "type": "null"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "address": {
-              "type": "string"
+              "type": "integer"
             },
-            "artist_name": {
+            "description": {
               "type": "string"
             },
             "avatar": {
-              "type": "null"
+              "type": "string"
             },
             "catagory": {
               "type": "object",
@@ -1727,17 +1511,14 @@
                 "id": {
                   "type": "integer"
                 },
-                "name_catagory": {
+                "name_category": {
                   "type": "string"
                 }
               },
               "required": [
                 "id",
-                "name_catagory"
+                "name_category"
               ]
-            },
-            "description": {
-              "type": "null"
             },
             "genre": {
               "type": "object",
@@ -1753,244 +1534,19 @@
                 "id",
                 "name_genre"
               ]
-            },
-            "id": {
-              "type": "integer"
-            },
-            "id_catagory": {
-              "type": "null"
-            },
-            "id_genre": {
-              "type": "null"
-            },
-            "price": {
-              "type": "null"
             }
           },
           "required": [
-            "address",
+            "id",
             "artist_name",
+            "id_category",
+            "id_genre",
+            "address",
+            "price",
+            "description",
             "avatar",
             "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "address": {
-              "type": "string"
-            },
-            "artist_name": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "null"
-            },
-            "catagory": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_catagory": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_catagory"
-              ]
-            },
-            "description": {
-              "type": "null"
-            },
-            "genre": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_genre": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_genre"
-              ]
-            },
-            "id": {
-              "type": "integer"
-            },
-            "id_catagory": {
-              "type": "null"
-            },
-            "id_genre": {
-              "type": "null"
-            },
-            "price": {
-              "type": "null"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "address": {
-              "type": "string"
-            },
-            "artist_name": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "string"
-            },
-            "catagory": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_catagory": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_catagory"
-              ]
-            },
-            "description": {
-              "type": "string"
-            },
-            "genre": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_genre": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_genre"
-              ]
-            },
-            "id": {
-              "type": "integer"
-            },
-            "id_catagory": {
-              "type": "integer"
-            },
-            "id_genre": {
-              "type": "integer"
-            },
-            "price": {
-              "type": "integer"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
-          ]
-        },
-        {
-          "type": "object",
-          "properties": {
-            "address": {
-              "type": "string"
-            },
-            "artist_name": {
-              "type": "string"
-            },
-            "avatar": {
-              "type": "null"
-            },
-            "catagory": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_catagory": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_catagory"
-              ]
-            },
-            "description": {
-              "type": "null"
-            },
-            "genre": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "name_genre": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "name_genre"
-              ]
-            },
-            "id": {
-              "type": "integer"
-            },
-            "id_catagory": {
-              "type": "null"
-            },
-            "id_genre": {
-              "type": "null"
-            },
-            "price": {
-              "type": "null"
-            }
-          },
-          "required": [
-            "address",
-            "artist_name",
-            "avatar",
-            "catagory",
-            "description",
-            "genre",
-            "id",
-            "id_catagory",
-            "id_genre",
-            "price"
+            "genre"
           ]
         },
         {
@@ -2136,13 +1692,10 @@
           ]
         }
       ]
-    },
-    "message": {
-      "type": "string"
     }
   },
   "required": [
-    "data",
-    "message"
+    "message",
+    "data"
   ]
 }

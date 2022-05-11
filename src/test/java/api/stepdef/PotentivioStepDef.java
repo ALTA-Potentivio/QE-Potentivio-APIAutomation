@@ -14,17 +14,20 @@ public class PotentivioStepDef {
     public void userHasAlreadyHadLoginTokeAsArtist() {
         potentivioAPI.setTokenArtist();
     }
+
+
     @Given("user has already had login token as cafe-owner")
     public void userHasAlreadyHadLoginTokenAsCafe() {
         potentivioAPI.setTokenCafeOwner();
     }
+
     @Given("user has not already had login token")
     public void userHasNotAlreadyHadLoginToken() {
         potentivioAPI.setTokenNoLogin("null");
     }
 
     @When("user send GET All Artist request to potentivio")
-    public void getallArtist()  {
+    public void getallArtist() {
         potentivioAPI.setTokenCafeOwner();
         potentivioAPI.getAllArtist(potentivioAPI.getTokenCafeOwner());
     }
@@ -76,11 +79,59 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenArtist();
     }
 
+
     @And("user send DELETE video artist request to potentivio")
     public void deletevideoArtist() {
         potentivioAPI.deleteVideoArtist(potentivioAPI.getTokenArtist());
         potentivioAPI.setTokenArtist();
     }
+
+    @And("user send POST hire artist request to potentivio")
+    public void postHireArtist() {
+        potentivioAPI.posthireArtist(potentivioAPI.getTokenCafeOwner());
+        potentivioAPI.setTokenCafeOwner();
+    }
+
+    @And("user send POST accept request to potentivio")
+    public void postAcceptArtist() {
+        potentivioAPI.postacceptArtist(potentivioAPI.getTokenArtist());
+        potentivioAPI.setTokenArtist();
+    }
+
+    @And("user send PUT reject accept request to potentivio")
+    public void putRejectArtist() {
+        potentivioAPI.putrejectArtist(potentivioAPI.getTokenArtist());
+        potentivioAPI.setTokenArtist();
+    }
+
+    @And("user send PUT cancel accept request to potentivio")
+    public void putCancelArtist() {
+        potentivioAPI.putcancelArtist(potentivioAPI.getTokenArtist());
+        potentivioAPI.setTokenArtist();
+    }
+
+    @And("user send PUT rating accept request to potentivio")
+    public void putRatingArtist() {
+        potentivioAPI.putratingArtist(potentivioAPI.getTokenCafeOwner());
+        potentivioAPI.setTokenCafeOwner();
+    }
+
+    @And("user send PUT cafe done request to potentivio")
+    public void putCafeDone() {
+        potentivioAPI.putcafeDone(potentivioAPI.getTokenCafeOwner());
+        potentivioAPI.setTokenCafeOwner();
+    }
+
+    @And("user send GET hire artist request to potentivio")
+    public void getHireArtist() {
+        potentivioAPI.gethireArtist(potentivioAPI.getTokenArtist());
+        potentivioAPI.setTokenArtist();
+    }
+
+    @And("user send GET hire cafe request to potentivio")
+    public void getHireCafe() {
+        potentivioAPI.gethireCafe(potentivioAPI.getTokenCafeOwner());
+        potentivioAPI.setTokenCafeOwner();
 
     @When("user send GET All Category Artist request to potentivio")
     public void getAllCategoryArtist() {
@@ -164,5 +215,6 @@ public class PotentivioStepDef {
     public void userSendGETAllNotificationRequestToPotentivio() {
         potentivioAPI.setTokenCafeOwner();
         potentivioAPI.getAllNotification(potentivioAPI.getTokenCafeOwner());
+
     }
 }
