@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "cafe_name": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phone_number": {
+          "type": "null"
+        },
+        "address": {
+          "type": "string"
+        },
+        "description": {
+          "type": "null"
+        },
+        "opening_hours": {
+          "type": "null"
+        },
+        "avatar": {
+          "type": "null"
+        },
+        "account_number": {
+          "type": "null"
+        },
+        "longitude": {
+          "type": "null"
+        },
+        "latitude": {
+          "type": "null"
+        },
+        "ImageCafe": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "id",
+        "cafe_name",
+        "owner",
+        "email",
+        "phone_number",
+        "address",
+        "description",
+        "opening_hours",
+        "avatar",
+        "account_number",
+        "longitude",
+        "latitude",
+        "ImageCafe"
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}

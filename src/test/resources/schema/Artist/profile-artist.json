@@ -67,51 +67,6 @@
                 "id",
                 "video_url"
               ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer"
-                },
-                "video_url": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "id",
-                "video_url"
-              ]
             }
           ]
         }

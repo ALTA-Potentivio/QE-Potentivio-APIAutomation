@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -15,4 +16,23 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
+=======
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="root" level="DEBUG"/>
+    <logger name="net.serenitybdd" level="WARN"/>
+    <logger name="net.thucydides" level="WARN"/>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+>>>>>>> 8c439af3984349376d0ddc7e8564abfedae89709
 </configuration>
