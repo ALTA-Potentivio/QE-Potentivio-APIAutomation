@@ -7,7 +7,6 @@ Feature: Register Artist
     Then response status code should be 200
     And response structure should match json schema "register-artist.json" from "Register"
 
-
   @negative @failedregisterartist @duplicateemail
     Scenario:  Duplicate email POST Register artist
     When user send POST duplicate email Register request to potentivio

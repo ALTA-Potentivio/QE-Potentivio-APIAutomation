@@ -153,4 +153,16 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenArtist();
         potentivioAPI.getAllGenre(potentivioAPI.getTokenArtist());
     }
+
+    @When("user send POST Notification to Artist request to potentivio")
+    public void userSendPOSTNotificationToArtistRequestToPotentivio() {
+        potentivioAPI.setTokenArtist();
+        potentivioAPI.postNotification(potentivioAPI.getTokenArtist());
+    }
+
+    @When("user send GET All Notification request to potentivio")
+    public void userSendGETAllNotificationRequestToPotentivio() {
+        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.getAllNotification(potentivioAPI.getTokenCafeOwner());
+    }
 }

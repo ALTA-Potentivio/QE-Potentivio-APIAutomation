@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "artist_name": {
+              "type": "string"
+            },
+            "avatar": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "id_artist": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            },
+            "name_genre": {
+              "type": "string"
+            },
+            "price": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "artist_name",
+            "avatar",
+            "id",
+            "id_artist",
+            "name_catagory",
+            "name_genre",
+            "price"
+          ]
+        }
+      ]
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "data",
+    "message"
+  ]
+}
