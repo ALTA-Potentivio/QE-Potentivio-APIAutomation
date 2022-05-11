@@ -21,10 +21,17 @@ public class PotentivioStepDef {
         potentivioAPI.setTokenCafeOwner();
     }
 
-    @Given("user has not already had login token")
-    public void userHasNotAlreadyHadLoginToken() {
-        potentivioAPI.setTokenNoLogin("null");
+    @Given("user has already had login token as artist 2")
+    public void userHasAlreadyHadLoginTokeAsArtistDua() {
+        potentivioAPI.setTokenArtistDua();
     }
+
+
+    @Given("user has already had login token as cafe-owner 2")
+    public void userHasAlreadyHadLoginTokenAsCafeDua() {
+        potentivioAPI.setTokenCafeOwnerDua();
+    }
+
 
     @When("user send GET All Artist request to potentivio")
     public void getallArtist() {
@@ -88,50 +95,51 @@ public class PotentivioStepDef {
 
     @And("user send POST hire artist request to potentivio")
     public void postHireArtist() {
-        potentivioAPI.posthireArtist(potentivioAPI.getTokenCafeOwner());
-        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.posthireArtist(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
     }
 
     @And("user send POST accept request to potentivio")
     public void postAcceptArtist() {
-        potentivioAPI.postacceptArtist(potentivioAPI.getTokenArtist());
-        potentivioAPI.setTokenArtist();
+        potentivioAPI.postacceptArtist(potentivioAPI.getTokenArtistDua());
+        potentivioAPI.setTokenArtistDua();
     }
 
     @And("user send PUT reject accept request to potentivio")
     public void putRejectArtist() {
-        potentivioAPI.putrejectArtist(potentivioAPI.getTokenArtist());
-        potentivioAPI.setTokenArtist();
+        potentivioAPI.putrejectArtist(potentivioAPI.getTokenArtistDua());
+        potentivioAPI.setTokenArtistDua();
     }
 
     @And("user send PUT cancel accept request to potentivio")
     public void putCancelArtist() {
-        potentivioAPI.putcancelArtist(potentivioAPI.getTokenArtist());
-        potentivioAPI.setTokenArtist();
+        potentivioAPI.putcancelArtist(potentivioAPI.getTokenArtistDua());
+        potentivioAPI.setTokenArtistDua();
     }
 
     @And("user send PUT rating accept request to potentivio")
     public void putRatingArtist() {
-        potentivioAPI.putratingArtist(potentivioAPI.getTokenCafeOwner());
-        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.putratingArtist(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
     }
 
     @And("user send PUT cafe done request to potentivio")
     public void putCafeDone() {
-        potentivioAPI.putcafeDone(potentivioAPI.getTokenCafeOwner());
-        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.putcafeDone(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
     }
 
     @And("user send GET hire artist request to potentivio")
     public void getHireArtist() {
-        potentivioAPI.gethireArtist(potentivioAPI.getTokenArtist());
-        potentivioAPI.setTokenArtist();
+        potentivioAPI.gethireArtist(potentivioAPI.getTokenArtistDua());
+        potentivioAPI.setTokenArtistDua();
     }
 
     @And("user send GET hire cafe request to potentivio")
     public void getHireCafe() {
-        potentivioAPI.gethireCafe(potentivioAPI.getTokenCafeOwner());
-        potentivioAPI.setTokenCafeOwner();
+        potentivioAPI.gethireCafe(potentivioAPI.getTokenCafeOwnerDua());
+        potentivioAPI.setTokenCafeOwnerDua();
+    }
 
     @When("user send GET All Category Artist request to potentivio")
     public void getAllCategoryArtist() {

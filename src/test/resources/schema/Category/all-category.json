@@ -64,6 +64,216 @@
             "id",
             "name_catagory"
           ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name_catagory": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "name_catagory"
+          ]
         }
       ]
     },
